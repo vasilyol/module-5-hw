@@ -31,9 +31,7 @@ function App() {
     const addPlace = (id) => {
         const place = places.find(place => place.id === id);
         if (!selectedPlaces.includes(place)) {
-            const newList = [...selectedPlaces];
-            newList.unshift(place);
-            setSelected(newList);
+            setSelected([place, ...selectedPlaces]);
         }
     }
 
